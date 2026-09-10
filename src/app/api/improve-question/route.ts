@@ -8,7 +8,10 @@ export async function POST(req: Request) {
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
+    console.log(process.env);
+    console.log("Printing API key");
     console.log(apiKey);
+    
     if (!apiKey) {
       return NextResponse.json(
         { error: "Gemini API key is not configured on the server. Please set GEMINI_API_KEY in your env variables." },
